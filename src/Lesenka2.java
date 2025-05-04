@@ -14,8 +14,7 @@ public class Lesenka2 {
                 for (int i=1; i<=n; i++){
                 System.out.print("#");
                 }
-                int h = lesenka(n-1);
-                return h;
+                return lesenka(n-1);
 
             }
         }
