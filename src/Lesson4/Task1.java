@@ -20,10 +20,9 @@ public class Task1 {
                 k = i + 1;
                 result.insert(0, symbol);
             }
-            System.out.println(result);
         }
 
-
+        System.out.println(result);
     }
 
 }
