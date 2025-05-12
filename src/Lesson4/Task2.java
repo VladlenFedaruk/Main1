@@ -31,7 +31,6 @@ public class Task2 {
                 result3.append(resultNumber);
                 result2.delete(0, countSymbol);
             }
-
         }
 
         result3.reverse();
