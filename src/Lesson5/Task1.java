@@ -10,18 +10,16 @@ public class Task1 {
         int n = scanner.nextInt();
         int[] numbers = new int[n];
         int[] numbersSor = new int[n];
-        int j = 1;
+        int j = 0;
 
         for (int i = 0; i < n; i++) {
             j = i + 1;
-            System.out.println("введите " + j + "элемент массива");
+            System.out.println("введите " + j + " элемент массива");
             numbers[i] = scanner.nextInt();
         }
 
         System.arraycopy(numbers, 0, numbersSor, 0, n);
-        System.out.println(Arrays.toString(numbersSor));
         Arrays.sort(numbersSor);
-        System.out.println(Arrays.toString(numbersSor));
         int numMin = numbersSor[0];
         int numMax = numbersSor[n - 1];
         int indexMin = 0;
