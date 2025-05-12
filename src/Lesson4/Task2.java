@@ -16,8 +16,8 @@ public class Task2 {
         for (int i = 0; i < countSymbol; i++) {
             char symbol = text.charAt(i);
             int code = symbol;
-            result.insert(0, " ");
-            result.insert(0, code);
+            result.append(code);
+            result.append(" ");
         }
 
         int countSymbol2 = result.length();
@@ -33,7 +33,6 @@ public class Task2 {
             }
         }
 
-        result3.reverse();
         System.out.println(result);
         System.out.println(result3);
     }
