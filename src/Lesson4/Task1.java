@@ -8,21 +8,19 @@ public class Task1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("введите строку");
         String text = scanner.nextLine();
-        StringBuilder result = new StringBuilder(text);
-        StringBuilder result2 = new StringBuilder();
-        result.reverse();
+        StringBuilder result = new StringBuilder();
         int countSymbol = text.length();
         int k = 0;
         for (int i = 0; i < countSymbol; i++) {
             char symbol = text.charAt(i);
             if (symbol != 32) {
                 int j = i - k;
-                result2.insert(j, symbol);
+                result.insert(j, symbol);
             } else {
                 k = i + 1;
-                result2.insert(0, symbol);
+                result.insert(0, symbol);
             }
-            System.out.println(result2);
+            System.out.println(result);
         }
 
 
