@@ -1,5 +1,6 @@
 package Lesson5;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task2 {
@@ -18,13 +19,13 @@ public class Task2 {
             numbers[i] = scanner.nextInt();
             if (numbers[i] % 2 == 0) {
                 chet += 1;
-            }
-            if (numbers[i] % 2 != 0) {
+            } else
                 neChet += 1;
-            }
+
         }
 
         System.out.println("четных чисел " + chet + "   нечетных чисел " + neChet);
+        System.out.println(Arrays.toString(numbers));
     }
 
 }
