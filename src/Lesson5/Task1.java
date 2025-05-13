@@ -40,6 +40,7 @@ public class Task1 {
 
         System.out.println("Минимальный элемент массива " + numMin + " c индексом " + indexMin);
         System.out.println("Максимальноый элемент массива " + numMax + " c индексом " + indexMax);
+        System.out.println(Arrays.toString(numbers));
     }
 
     public static void mode2() {
