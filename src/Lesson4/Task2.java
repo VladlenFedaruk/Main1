@@ -26,7 +26,7 @@ public class Task2 {
             if (symbol != 32) {
                 result2.append(symbol);
             } else {
-                int number = Integer.valueOf(result2.toString());
+               int number = Integer.valueOf(result2.toString());
                 char resultNumber = (char) number;
                 result3.append(resultNumber);
                 result2.delete(0, countSymbol);
