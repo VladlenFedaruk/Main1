@@ -31,7 +31,7 @@ public class Task3 {
         int sum = 0;
         while (k != 1) {
             for (int j = i; j < numbers.length; j++) {
-                if ((numbers[j] == numbersSor[i])&&(i!=j)&&(numbers[j]!=numbers[i])) {
+                if ((numbers[j] == numbersSor[i])&&(numbers[j]!=numbers[i])) {
                     h = numbers[j];
                     numbers[j] = numbers[i];
                     numbers[i] = h;
