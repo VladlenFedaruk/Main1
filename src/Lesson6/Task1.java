@@ -15,8 +15,9 @@ public class Task1 {
             System.out.println("введите " + j + " элемент массива");
             numbers[i] = scanner.nextInt();
         }
+        System.out.println("было = "+Arrays.toString(numbers));
         les6T1(numbers);
-        System.out.println(Arrays.toString(numbers));
+        System.out.println("ствло = "+Arrays.toString(numbers));
     }
 
     public static void les6T1(int[] numbers) {
