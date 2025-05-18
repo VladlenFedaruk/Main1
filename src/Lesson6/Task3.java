@@ -36,7 +36,7 @@ public class Task3 {
                     numbers[j] = numbers[i];
                     numbers[i] = h;
                     sum += 1;
-                    String stSum = (" [" + numbers[i] + " " + numbers[j] + "] ");
+                    String stSum = (" [" + numbers[j] + " " + numbers[i] + "] ");
                     result.append(stSum);
                     break;
                 }
