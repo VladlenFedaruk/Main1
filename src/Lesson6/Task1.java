@@ -26,7 +26,7 @@ public class Task1 {
                 int k = 0;
                 int ch1 = numbers[i];
                 while ((j > 0) && (k != 1)) {
-                    if (numbers[j - 1] > 0) {
+                    if (numbers[j - 1] >= 0) {
                         numbers[j] = numbers[j - 1];
                         numbers[j - 1] = ch1;
                         j--;
