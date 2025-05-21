@@ -14,9 +14,9 @@ public class Task3 {
             System.out.println("введите " + j + " элемент массива");
             numbers[i] = scanner.nextInt();
         }
-        System.out.println("было "+Arrays.toString(numbers));
+        System.out.println("было " + Arrays.toString(numbers));
         les6T3(numbers);
-        System.out.println("стало "+Arrays.toString(numbers));
+        System.out.println("стало " + Arrays.toString(numbers));
 
     }
 
@@ -31,7 +31,7 @@ public class Task3 {
         int sum = 0;
         while (k != 1) {
             for (int j = i; j < numbers.length; j++) {
-                if ((numbers[j] == numbersSor[i])&&(numbers[j]!=numbers[i])) {
+                if ((numbers[j] == numbersSor[i]) && (numbers[j] != numbers[i]) && (numbers[j] != numbersSor[j])) {
                     h = numbers[j];
                     numbers[j] = numbers[i];
                     numbers[i] = h;
