@@ -20,9 +20,9 @@ public class Main {
         Player[] players = new Player[2];
 
         int j = 1;
+        Scanner scanner = new Scanner(System.in);
         for (int i = 0; i <= 1; i++) {
             System.out.println("Игрок " + j + " выберете игрового персонажа  - Paladin, 2 - Archer, 3- Robber");
-            Scanner scanner = new Scanner(System.in);
             int num = scanner.nextInt();
             if (num == 1) {
                 players[i] = paladin;
@@ -42,7 +42,11 @@ public class Main {
             ch = scanner.nextLine();
             j++;
         }
-
-
+        System.out.println("Ну что, сразимся?");
+        String ch = scanner.nextLine();
+        players[0].getDamage();
+        int setDam = players[0].damage;
+        players[1].setDamage(setDam);
+        System.out.println(players[1]);
     }
 }
