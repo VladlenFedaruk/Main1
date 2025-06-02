@@ -34,11 +34,14 @@ public class Main {
                 players[i] = robber;
             }
             players[i].getPlayerName();
-            System.out.println(players[i]);
+            String ch = scanner.nextLine();
+            System.out.println("Ваши базовые характеристики " + players[i]);
+            ch = scanner.nextLine();
+            players[i].getBonus();
+            System.out.println("Ваши характеристики после улучшения" + players[i]);
+            ch = scanner.nextLine();
             j++;
         }
-        for (int i = 0; i <= 10; i++){
-        int randomNum = ThreadLocalRandom.current().nextInt(1, 7);
-        System.out.println(randomNum);}
+
     }
 }

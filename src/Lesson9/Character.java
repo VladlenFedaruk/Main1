@@ -16,16 +16,4 @@ public abstract class Character {
 
     }
 
-
-    @Override
-    public String toString() {
-        return "Character{" +
-                "name='" + name + '\'' +
-                ", weapon=" + weapon +
-                ", armor=" + armor +
-                ", baseHealth=" + baseHealth +
-                '}';
-    }
-
-
 }
