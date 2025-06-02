@@ -11,8 +11,11 @@ public class Main {
         Armor huntsmanClothes = new Armor("Huntsman Clothes'", 200);
 
         Weapon bastardSword = new Weapon("Bastard Sword", 200);
+        Weapon bonusMase = new Weapon("ЛЕГЕНДАРНАЯ БУЛАВА из драконего ел...ка", 250);
         Weapon doubleDagger = new Weapon("Double Dagger", 260);
+        Weapon bonusDagger = new Weapon("ЛЕГЕНДАРНЫЙ нож нимфоманки", 300);
         Weapon compoundBow = new Weapon("Compound Bow", 300);
+        Weapon bonusBow = new Weapon("ЛЕГЕНДАРНЫЙ самопередергивающий арбалет", 360);
 
         Player paladin = new Player("Paladin", bastardSword.baseWeaponDamage, plateArmor.baseArmor, 1000);
         Player archer = new Player("Archer", compoundBow.baseWeaponDamage, huntsmanClothes.baseArmor, 800);
@@ -35,26 +38,30 @@ public class Main {
             }
             players[i].getPlayerName();
             String ch = scanner.nextLine();
-            System.out.println("Игрок " + players[i].playerName +" ваши базовые характеристики " + players[i]);
+            System.out.println("Игрок " + players[i].playerName + " ваши базовые характеристики " + players[i]);
             ch = scanner.nextLine();
+            System.out.println("Игрок " + players[i].playerName + " хочешь попытать удачу в поисках ЛЕГЕНДАРНОГО оружия, если да, нажми 1 ");
+            int ch1 = scanner.nextInt();
+            if (ch1 == 1) {
+            }
             players[i].getBonus();
-            System.out.println("Игрок " + players[i].playerName +" ваши характеристики после улучшения " + players[i]);
+            System.out.println("Игрок " + players[i].playerName + " ваши характеристики после улучшения " + players[i]);
             ch = scanner.nextLine();
             j++;
         }
         System.out.println("Ну что, сразимся?");
         String ch = scanner.nextLine();
-        int i =0;
-        int l =1;
-        int k =0;
+        int i = 0;
+        int l = 1;
+        int k = 0;
         while ((players[i].baseHealth > 0) & (players[l].baseHealth > 0)) {
             players[i].getDamage();
             int setDam = players[i].damage;
             players[l].setDamage(setDam);
             System.out.println(players[l]);
-            k=i;
-            i=l;
-            l=k;
+            k = i;
+            i = l;
+            l = k;
         }
         System.out.println(players[i].playerName + " вы лузер))))");
         System.out.println(players[l].playerName + " вы вы ультрапобедитель))))");

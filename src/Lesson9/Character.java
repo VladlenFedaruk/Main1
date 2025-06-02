@@ -12,8 +12,8 @@ public abstract class Character {
         this.baseHealth = baseHealth;
     }
 
+
     public Character() {
 
     }
-
 }

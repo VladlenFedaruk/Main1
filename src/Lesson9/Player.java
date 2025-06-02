@@ -51,6 +51,7 @@ public class Player extends Character {
         return player;
     }
 
+
     public void setDamage(int setDam) {
         if (setDam - armor > 0) {
             baseHealth = baseHealth - (setDam - armor);
@@ -73,6 +74,8 @@ public class Player extends Character {
         ch = scanner.nextLine();
         return damage;
     }
+
+
 
     @Override
     public String toString() {
