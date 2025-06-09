@@ -3,12 +3,12 @@ package Lesson10;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Player extends Character {
+public class Player extends Character implements Cloneable {
     public String playerName;
     public int playerDamage;
 
-    public Player(String name, Weapon weapon, Armor armor, int baseHealth) {
-        super(name, weapon, armor, baseHealth);
+    public Player(String playerName, String name, Weapon weapon, Armor armor, int baseHealth) {
+        super(playerName, name, weapon, armor, baseHealth);
     }
 
     public Player(String playerName, int playerDamage) {
@@ -21,6 +21,12 @@ public class Player extends Character {
     Weapon bonusBow = new Weapon("ЛЕГЕНДАРНЫЙ самопередергивающий арбалет", 450);
     Weapon brassKnuckles = new Weapon("Чудо костет", 250);
 
+    @Override
+    public Player clone() throws CloneNotSupportedException {
+        this.armor =  armor.clone();
+        this.weapon = weapon.clone();
+        return (Player) super.clone();
+    }
 
     public String getPlayerName() {
         System.out.println("Введите имя игрока");
@@ -102,13 +108,13 @@ public class Player extends Character {
         if (playerDam > armor.baseArmor) {
             System.out.println("Игрок " + playerName + "  теряет " + (playerDam - armor.baseArmor) + " здоровья " + armor.baseArmor + " урона заблокировано броней");
             baseHealth -= (playerDam - armor.baseArmor);
-        }
-        else {
+        } else {
             System.out.println("весь урон заблокирован броней");
         }
         Scanner scanner = new Scanner(System.in);
         String ch = scanner.nextLine();
     }
+
 
     @Override
     public String toString() {

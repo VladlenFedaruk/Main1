@@ -7,11 +7,12 @@ public class Character {
     public int baseHealth;
     public String playerName;
 
-    public Character(String name, Weapon weapon, Armor armor, int baseHealth) {
+    public Character(String playerName, String name, Weapon weapon, Armor armor, int baseHealth) {
         this.name = name;
         this.weapon = weapon;
         this.armor = armor;
         this.baseHealth = baseHealth;
+        this.playerName=playerName;
     }
     public Character(String playerName){
         this.playerName=playerName;

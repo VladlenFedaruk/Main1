@@ -3,7 +3,7 @@ package Lesson10;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Armor plateArmor = new Armor("Plate Armor", 250);
         Armor robberJacket = new Armor("Robber Jacket", 210);
         Armor huntsmanClothes = new Armor("Huntsman Clothes", 150);
@@ -14,9 +14,9 @@ public class Main {
         Weapon playerWeapon = new Weapon("name", 50);
 
 
-        Player paladin = new Player("Паладин", playerWeapon, plateArmor, 1000);
-        Player robber = new Player("Разбойник", playerWeapon, robberJacket, 800);
-        Player archer = new Player("Лучник", playerWeapon, huntsmanClothes, 600);
+        Player paladin = new Player("Player","Паладин", playerWeapon, plateArmor, 1000);
+        Player robber = new Player("Player","Разбойник", playerWeapon, robberJacket, 800);
+        Player archer = new Player("Player","Лучник", playerWeapon, huntsmanClothes, 600);
 
         Player[] players = new Player[2];
         int j = 1;
@@ -25,7 +25,7 @@ public class Main {
             System.out.println("Игрок " + j + " выберете игрового персонажа  1- Паладин, 2 - Разбойник, 3- Лучник");
             int num = scanner.nextInt();
             if (num == 1) {
-                players[i] = paladin;
+                players[i] = (Player) paladin.clone();
                 playerWeapon = bastardSword;
                 players[i].weapon = playerWeapon;
             }
@@ -60,17 +60,25 @@ public class Main {
         int i = 0;
         int l = 1;
         int k = 0;
-        while ((players[i].baseHealth > 0) & (players[l].baseHealth > 0)) {
-            players[i].getDamage();
-            int playerDam = players[i].playerDamage;
-            players[l].setDamage(playerDam);
+        while (true) {
+            if ((players[i].baseHealth > 0) & (players[l].baseHealth > 0)) {
+                players[i].getDamage();
+                int playerDam = players[i].playerDamage;
+                players[l].setDamage(playerDam);
+                k = i;
+                i = l;
+                l = k;
+            } else {
+                players[i].baseHealth = 0;
+                System.out.println("Игрок " + players[l].playerName + " " + players[l]);
+                System.out.println("Игрок " + players[i].playerName + " " + players[i]);
+                break;
+            }
             System.out.println("Игрок " + players[l].playerName + " " + players[l]);
             System.out.println("Игрок " + players[i].playerName + " " + players[i]);
-            k = i;
-            i = l;
-            l = k;
+            ch = scanner.nextLine();
         }
-        players[i].baseHealth=0;
+
         System.out.println(players[i].playerName + " вы лузер))))");
         System.out.println(players[l].playerName + " вы вы ультрапобедитель))))");
         System.out.println(players[l].playerName + " смотрите как вы хороши, еще бы раз сложили))))");
