@@ -1,4 +1,4 @@
-package Lesson10;
+package Lesson9H;
 
 public class Armor implements Cloneable {
     public String nameArmor;
