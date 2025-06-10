@@ -25,17 +25,17 @@ public class Main {
             System.out.println("Игрок " + j + " выберете игрового персонажа  1- Паладин, 2 - Разбойник, 3- Лучник");
             int num = scanner.nextInt();
             if (num == 1) {
-                players[i] = (Player) paladin.clone();
+                players[i] = paladin.clone();
                 playerWeapon = bastardSword;
                 players[i].weapon = playerWeapon;
             }
             if (num == 2) {
-                players[i] = robber;
+                players[i] = robber.clone();
                 playerWeapon = doubleDagger;
                 players[i].weapon = playerWeapon;
             }
             if (num == 3) {
-                players[i] = archer;
+                players[i] = archer.clone();
                 playerWeapon = compoundBow;
                 players[i].weapon = playerWeapon;
             }

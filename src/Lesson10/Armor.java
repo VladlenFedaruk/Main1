@@ -8,6 +8,7 @@ public class Armor implements Cloneable {
         this.nameArmor = nameArmor;
         this.baseArmor = baseArmor;
     }
+
     @Override
     protected Armor clone() throws CloneNotSupportedException {
         return (Armor) super.clone();
