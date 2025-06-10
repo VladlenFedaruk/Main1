@@ -15,8 +15,8 @@ public class Main {
 
 
         Player paladin = new Player("Player","Паладин", playerWeapon, plateArmor, 1000);
-        Player robber = new Player("Player","Разбойник", playerWeapon, robberJacket, 800);
-        Player archer = new Player("Player","Лучник", playerWeapon, huntsmanClothes, 600);
+        Player robber = new Player("Player","Разбойник", playerWeapon, robberJacket, 900);
+        Player archer = new Player("Player","Лучник", playerWeapon, huntsmanClothes, 800);
 
         Player[] players = new Player[2];
         int j = 1;
