@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Player extends Character {
-    String playerName;
+    public String playerName;
     int damage;
 
     public Player(String name, int weapon, int armor, int baseHealth) {
@@ -17,6 +17,9 @@ public class Player extends Character {
         this.damage = damage;
 
 
+    }
+
+    public Player(String playerName) {
     }
 
     public Player getPlayerName() {
@@ -51,13 +54,44 @@ public class Player extends Character {
         return player;
     }
 
+    public int getBonusWeapon() {
+        Scanner scanner = new Scanner(System.in);
+        String ch = scanner.nextLine();
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 7);
+        if (randomNum < 3) {
+            weapon = 50;
+            System.out.println("Игрок " + playerName + " ты неудачник и сломал свое оружие");
+        }
+        if (randomNum > 4) {
+            if (weapon == 300) {
+                System.out.println("Игрок " + playerName + " тебе повезло, ты нашел ЛЕГЕНДАРНЫЙ самопередергивающий арбалет ");
+                weapon = weapon + 100;
+            }
+            if (weapon == 260) {
+                System.out.println("Игрок " + playerName + " тебе повезло, ты нашел ЛЕГЕНДАРНЫЙ нож нимфоманки ");
+                weapon = weapon + 70;
+            }
+            if (weapon == 200) {
+                System.out.println("Игрок " + playerName + " тебе повезло, ты нашел ЛЕГЕНДАРНАЯ БУЛАВА из драконего ел...ка");
+                weapon = weapon + 50;
+            }
+        }
+        if ((randomNum > 2)&(randomNum < 5)) {
+            System.out.println("Игрок " + playerName + " ты ничего ненашел");
+
+        }
+        return weapon;
+    }
+
 
     public void setDamage(int setDam) {
         if (setDam - armor > 0) {
             baseHealth = baseHealth - (setDam - armor);
+            System.out.println("Игрок " + playerName + "  теряет " + (setDam - armor) + " здоровья " + armor + " урона заблокировано броней");
         }
-
-        System.out.println("Игрок " + playerName + "  теряет " + (setDam - armor) + " здоровья " + armor + " урона заблокировано броней");
+       else {
+           System.out.println("весь урон заблокирован броней");
+        }
         Scanner scanner = new Scanner(System.in);
         String ch = scanner.nextLine();
     }
@@ -74,7 +108,6 @@ public class Player extends Character {
         ch = scanner.nextLine();
         return damage;
     }
-
 
 
     @Override

@@ -16,24 +16,27 @@ public class Main {
         Weapon bonusDagger = new Weapon("ЛЕГЕНДАРНЫЙ нож нимфоманки", 300);
         Weapon compoundBow = new Weapon("Compound Bow", 300);
         Weapon bonusBow = new Weapon("ЛЕГЕНДАРНЫЙ самопередергивающий арбалет", 360);
+        Weapon playerWewapon = new Weapon("name",50);
 
-        Player paladin = new Player("Paladin", bastardSword.baseWeaponDamage, plateArmor.baseArmor, 1000);
-        Player archer = new Player("Archer", compoundBow.baseWeaponDamage, huntsmanClothes.baseArmor, 800);
-        Player robber = new Player("Robber", doubleDagger.baseWeaponDamage, robberJacket.baseArmor, 600);
+        Player paladin = new Player("Paladin", playerWewapon.baseWeaponDamage, plateArmor.baseArmor, 1000);
+        Player archer = new Player("Archer", playerWewapon.baseWeaponDamage, huntsmanClothes.baseArmor, 800);
+        Player robber = new Player("Robber", playerWewapon.baseWeaponDamage, robberJacket.baseArmor, 600);
         Player[] players = new Player[2];
-
         int j = 1;
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i <= 1; i++) {
             System.out.println("Игрок " + j + " выберете игрового персонажа  1- Paladin, 2 - Archer, 3- Robber");
             int num = scanner.nextInt();
             if (num == 1) {
+                playerWewapon=bastardSword;
                 players[i] = paladin;
             }
             if (num == 2) {
+                playerWewapon=doubleDagger;
                 players[i] = archer;
             }
             if (num == 3) {
+                playerWewapon=compoundBow;
                 players[i] = robber;
             }
             players[i].getPlayerName();
@@ -43,6 +46,7 @@ public class Main {
             System.out.println("Игрок " + players[i].playerName + " хочешь попытать удачу в поисках ЛЕГЕНДАРНОГО оружия, если да, нажми 1 ");
             int ch1 = scanner.nextInt();
             if (ch1 == 1) {
+                players[i].getBonusWeapon();
             }
             players[i].getBonus();
             System.out.println("Игрок " + players[i].playerName + " ваши характеристики после улучшения " + players[i]);

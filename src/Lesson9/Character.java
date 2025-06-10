@@ -1,9 +1,9 @@
 package Lesson9;
 public abstract class Character {
      String name;
-     int weapon;
+     public int weapon;
      int armor;
-     int baseHealth;
+     public int baseHealth;
 
     public Character(String name, int weapon, int armor, int baseHealth) {
         this.name = name;
