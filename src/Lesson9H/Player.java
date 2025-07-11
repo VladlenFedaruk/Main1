@@ -115,7 +115,6 @@ public class Player extends Character implements Cloneable {
         String ch = scanner.nextLine();
     }
 
-
     @Override
     public String toString() {
         return "Класс - '" + name + '\'' +
