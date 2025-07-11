@@ -107,6 +107,7 @@ public class Player extends Character {
         System.out.println("Игрок " + playerName + " наносит " + damage + " урона " + weapon + " урона от оружия " + (damage - weapon) + " критического урона");
         ch = scanner.nextLine();
         return damage;
+
     }
 
 
